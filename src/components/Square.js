@@ -8,7 +8,11 @@ const Square = (props) => {
     outline: "none",
   };
 
-  return <button style={style} onClick={props.onClick}>{props.value}</button>;
+  return (
+    <button style={style} onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 };
 
 export default Square;
