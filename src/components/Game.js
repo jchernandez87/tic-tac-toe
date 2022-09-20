@@ -8,7 +8,16 @@ const Game = () => {
 
   const winner = calculateWinner(board);
 
-  const handleClick = () => console.log("hi");
+  const handleClick = (i) => {
+    const boardCopy = [...board];
+
+    if (winner || boardCopy[i]) return;
+
+    boardCopy[i] = xIsNext ? "X" : "O";
+
+    setBoard(boardCopy);
+    setXIsNext(!xIsNext);
+  };
 
   const jumpTo = () => {};
 
