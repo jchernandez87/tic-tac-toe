@@ -1,13 +1,21 @@
 import Square from "./Square";
 
 const Board = (props) => {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const style = {
+    border: "4px solid darkblue",
+    borderRadius: "10px",
+    width: "250px",
+    height: "250px",
+    margin: "0 auto",
+    display: "grid",
+    gridTemplate: "repeat(3, 1fr) / repeat(3, 1fr)",
+  };
 
-  const squares = arr.map((el) => (
-    <Square key={el} value={el} onClick={props.onClick} />
+  const squares = props.squares.map((el, i) => (
+    <Square key={i} value={el} onClick={() => props.onClick(i)} />
   ));
 
-  return <div>{squares}</div>;
+  return <div style={style}>{squares}</div>;
 };
 
 export default Board;
